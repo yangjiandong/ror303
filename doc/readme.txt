@@ -12,6 +12,7 @@ ror303
 
    git push origin master:refs/heads/master
 
+   push origin develop
  
    --END
 
