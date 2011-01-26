@@ -16,8 +16,8 @@ if defined?(JRUBY_VERSION)
     gem 'rmagick4j'
 else
     gem 'sqlite3-ruby', :require => 'sqlite3'
-    gem 'ruby-oci8', '~> 2.0.4'
-    gem 'rmagick'
+    # gem 'ruby-oci8', '~> 2.0.4'
+    #gem 'rmagick'
 end
 
 # gem 'mysql2'
@@ -60,7 +60,11 @@ group :development, :test do
   gem 'annotate',           '>= 2.4.0'
   gem 'ffaker',             '>= 0.4.0' # Fast Faker for `rake crm:demo:load`
   gem 'rails3-generators'
-  gem 'warbler'
+
+  if defined?(JRUBY_VERSION)
+    gem 'warbler'
+  end
+
   gem 'bullet'
   gem 'mongrel'
   gem 'webrat'
